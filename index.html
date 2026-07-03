@@ -11,8 +11,8 @@
     a { color: var(--red); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .logo { display: flex; align-items: center; gap: 6px; text-decoration: none; }
-    .logo-z { width: 32px; height: 38px; flex-shrink: 0; }
+    .logo { display: flex; align-items: center; gap: 4px; text-decoration: none; }
+    .logo-z { width: 28px; height: 28px; flex-shrink: 0; }
     .logo-word { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
 
     nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2rem; border-bottom: 1px solid #1a1a1a; }
@@ -21,7 +21,7 @@
 
     .hero { text-align: center; padding: 5rem 2rem 4rem; max-width: 700px; margin: 0 auto; }
     .hero-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem; }
-    .hero-logo-z { width: 60px; height: 72px; flex-shrink: 0; }
+    .hero-logo-z { width: 72px; height: 72px; flex-shrink: 0; }
     .hero-logo-word { font-size: 3.6rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
     .hero h1 { font-size: clamp(2.2rem, 8vw, 3.8rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
     .hero h1 span { color: var(--red); }
@@ -56,22 +56,28 @@
 <body>
 
 <!--
-  ZIBA Z MARK — inline SVG traced from the actual logo.
-  Two red parallelograms with 3D depth shadow strips,
-  arranged in a Z formation. Black page background shows
-  through the diagonal gap to complete the Z shape.
-  No external files, loads instantly at any size.
+  ZIBA Z MARK — pixel-precise SVG traced from the actual logo PNG.
+  Coordinates derived from per-pixel boundary analysis of the source file.
+
+  4 polygons:
+    1. Top parallelogram  — main bright face, tip at upper-left (4.4,0)
+    2. Top fold shadow    — thin dark triangle below top face
+    3. Bottom parallelogram — main bright face, tip at lower-right (94,100)
+    4. Bottom fold shadow   — quad with inner crease vertex
+
+  The black page background shows through the gap between shapes
+  (Y=26 to Y=34 in the 100-unit viewBox), completing the Z diagonal.
 -->
 <svg style="display:none">
-  <symbol id="zmark" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
-    <!-- Top bar of the Z -->
-    <polygon points="0,6 102,6 120,46 18,46" fill="#e8001d"/>
-    <!-- 3D depth shadow under top bar -->
-    <polygon points="18,46 120,46 108,58 6,58" fill="#7a000d"/>
-    <!-- Bottom bar shadow at top edge (left notch) -->
-    <polygon points="0,88 18,88 0,100" fill="#7a000d"/>
-    <!-- Bottom bar of the Z -->
-    <polygon points="0,90 102,90 120,130 18,130" fill="#e8001d"/>
+  <symbol id="zmark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Top main face -->
+    <polygon points="4.4,0 69.8,6 95,26 33.8,26" fill="#e8001d"/>
+    <!-- Top fold shadow -->
+    <polygon points="33.8,26 95,26 98.5,32.5" fill="#6a0010"/>
+    <!-- Bottom main face -->
+    <polygon points="47.6,34 97.6,34 50.6,66 0.6,66" fill="#e8001d"/>
+    <!-- Bottom fold shadow (inner crease vertex at 17.5,68) -->
+    <polygon points="0.6,66 50.6,66 17.5,68 94,100" fill="#6a0010"/>
   </symbol>
 </svg>
 
