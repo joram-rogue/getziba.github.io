@@ -6,21 +6,23 @@
   <title>Ziba — Uganda's Social Commerce Marketplace</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --red: #e8001d; --black: #0a0a0a; --white: #ffffff; --muted: #666; }
+    :root { --red: #e8001d; --black: #0a0a0a; --white: #ffffff; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--black); color: var(--white); line-height: 1.6; }
     a { color: var(--red); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2rem; border-bottom: 1px solid #1a1a1a; }
-    .logo { display: flex; align-items: center; gap: 0.15rem; }
-    .logo img { height: 36px; width: auto; }
+    /* LOGO */
+    .logo { display: flex; align-items: center; gap: 0px; text-decoration: none; }
+    .logo-z { width: 36px; height: 36px; flex-shrink: 0; }
     .logo-word { font-size: 2rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2rem; border-bottom: 1px solid #1a1a1a; }
     nav a.btn { background: var(--red); color: var(--white); padding: 0.5rem 1.4rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
     nav a.btn:hover { text-decoration: none; opacity: 0.9; }
 
     .hero { text-align: center; padding: 5rem 2rem 4rem; max-width: 700px; margin: 0 auto; }
-    .hero-logo { display: flex; align-items: center; justify-content: center; gap: 0.2rem; margin-bottom: 1.5rem; }
-    .hero-logo img { height: 64px; width: auto; }
+    .hero-logo { display: flex; align-items: center; justify-content: center; gap: 0px; margin-bottom: 1.5rem; }
+    .hero-logo-z { width: 64px; height: 64px; flex-shrink: 0; }
     .hero-logo-word { font-size: 3.6rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
     .hero h1 { font-size: clamp(2.2rem, 8vw, 3.8rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
     .hero h1 span { color: var(--red); }
@@ -54,17 +56,25 @@
 </head>
 <body>
 
+<!-- Reusable inline SVG Z mark -->
+<svg style="display:none">
+  <symbol id="ziba-z" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" rx="22" fill="#e8001d"/>
+    <path d="M22 24h56l-38 52h38" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
 <nav>
-  <div class="logo">
-    <img src="ziba-mark.png" alt="Ziba mark" />
+  <a href="/" class="logo">
+    <svg class="logo-z"><use href="#ziba-z"/></svg>
     <span class="logo-word">IBA</span>
-  </div>
+  </a>
   <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn">📲 Download APK</a>
 </nav>
 
 <section class="hero">
   <div class="hero-logo">
-    <img src="ziba-mark.png" alt="Ziba" />
+    <svg class="hero-logo-z"><use href="#ziba-z"/></svg>
     <span class="hero-logo-word">IBA</span>
   </div>
   <h1>Trade smarter.<br /><span>Deliver faster.</span></h1>
@@ -80,7 +90,7 @@
   <div class="grid">
     <div class="card"><div class="icon">🛍️</div><h3>Post &amp; Sell</h3><p>List products with photos, set prices, run auctions, and reach buyers across Kampala markets instantly.</p></div>
     <div class="card"><div class="icon">🛵</div><h3>Ziba Delivery</h3><p>Assign verified riders to orders. Real-time tracking for traders and buyers, every step of the way.</p></div>
-    <div class="card"><div class="icon">🎥</div><h3>Showcase Reels</h3><p>48-hour product reels — show your stock in action and reach buyers who aren't even following you yet.</p></div>
+    <div class="card"><div class="icon">🎥</div><h3>Showcase Reels</h3><p>48-hour product reels — show your stock in action and reach buyers who aren’t even following you yet.</p></div>
     <div class="card"><div class="icon">💬</div><h3>Negotiate in Chat</h3><p>Built-in messaging with voice notes, seen receipts, and direct negotiation on every listing.</p></div>
     <div class="card"><div class="icon">⚡</div><h3>Quick Sale</h3><p>Snap a photo, set a price, post. No hub required. Sell anything in under 30 seconds.</p></div>
     <div class="card"><div class="icon">🔒</div><h3>Verified Riders</h3><p>Every rider goes through National ID verification and admin approval before touching a single order.</p></div>
@@ -89,7 +99,7 @@
 
 <div class="download">
   <h2>Available now on Android</h2>
-  <p>Download the APK directly — no Play Store needed. Enable "Install from unknown sources" and you're live.</p>
+  <p>Download the APK directly — no Play Store needed. Enable “Install from unknown sources” and you’re live.</p>
   <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn-primary">Download Latest APK</a>
 </div>
 
@@ -97,7 +107,7 @@
   <h2>Privacy Policy</h2>
   <p><em>Last updated: July 3, 2026</em></p>
   <h3>1. Who we are</h3>
-  <p>Zibahub ("Ziba", "we", "us") is a social commerce and delivery marketplace connecting traders and buyers in Uganda. Contact: <a href="mailto:getziba6@gmail.com">getziba6@gmail.com</a></p>
+  <p>Zibahub (“Ziba”, “we”, “us”) is a social commerce and delivery marketplace connecting traders and buyers in Uganda. Contact: <a href="mailto:getziba6@gmail.com">getziba6@gmail.com</a></p>
   <h3>2. What we collect</h3>
   <ul>
     <li>Account info: name, username, email, phone number, mobile money number</li>
@@ -128,7 +138,7 @@
   <h3>7. Children</h3>
   <p>Ziba is not intended for users under 13.</p>
   <h3>8. Changes</h3>
-  <p>We'll notify users of material changes via in-app notification.</p>
+  <p>We’ll notify users of material changes via in-app notification.</p>
   <h3>Contact</h3>
   <p><a href="mailto:getziba6@gmail.com">getziba6@gmail.com</a></p>
 </section>
