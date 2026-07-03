@@ -11,18 +11,17 @@
     a { color: var(--red); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* LOGO */
-    .logo { display: flex; align-items: center; gap: 0px; text-decoration: none; }
-    .logo-z { width: 36px; height: 36px; flex-shrink: 0; }
-    .logo-word { font-size: 2rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
+    .logo { display: flex; align-items: center; gap: 6px; text-decoration: none; }
+    .logo-z { width: 32px; height: 38px; flex-shrink: 0; }
+    .logo-word { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
 
     nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2rem; border-bottom: 1px solid #1a1a1a; }
     nav a.btn { background: var(--red); color: var(--white); padding: 0.5rem 1.4rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
     nav a.btn:hover { text-decoration: none; opacity: 0.9; }
 
     .hero { text-align: center; padding: 5rem 2rem 4rem; max-width: 700px; margin: 0 auto; }
-    .hero-logo { display: flex; align-items: center; justify-content: center; gap: 0px; margin-bottom: 1.5rem; }
-    .hero-logo-z { width: 64px; height: 64px; flex-shrink: 0; }
+    .hero-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem; }
+    .hero-logo-z { width: 60px; height: 72px; flex-shrink: 0; }
     .hero-logo-word { font-size: 3.6rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
     .hero h1 { font-size: clamp(2.2rem, 8vw, 3.8rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
     .hero h1 span { color: var(--red); }
@@ -56,17 +55,29 @@
 </head>
 <body>
 
-<!-- Reusable inline SVG Z mark -->
+<!--
+  ZIBA Z MARK — inline SVG traced from the actual logo.
+  Two red parallelograms with 3D depth shadow strips,
+  arranged in a Z formation. Black page background shows
+  through the diagonal gap to complete the Z shape.
+  No external files, loads instantly at any size.
+-->
 <svg style="display:none">
-  <symbol id="ziba-z" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="100" rx="22" fill="#e8001d"/>
-    <path d="M22 24h56l-38 52h38" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <symbol id="zmark" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+    <!-- Top bar of the Z -->
+    <polygon points="0,6 102,6 120,46 18,46" fill="#e8001d"/>
+    <!-- 3D depth shadow under top bar -->
+    <polygon points="18,46 120,46 108,58 6,58" fill="#7a000d"/>
+    <!-- Bottom bar shadow at top edge (left notch) -->
+    <polygon points="0,88 18,88 0,100" fill="#7a000d"/>
+    <!-- Bottom bar of the Z -->
+    <polygon points="0,90 102,90 120,130 18,130" fill="#e8001d"/>
   </symbol>
 </svg>
 
 <nav>
   <a href="/" class="logo">
-    <svg class="logo-z"><use href="#ziba-z"/></svg>
+    <svg class="logo-z"><use href="#zmark"/></svg>
     <span class="logo-word">IBA</span>
   </a>
   <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn">📲 Download APK</a>
@@ -74,11 +85,11 @@
 
 <section class="hero">
   <div class="hero-logo">
-    <svg class="hero-logo-z"><use href="#ziba-z"/></svg>
+    <svg class="hero-logo-z"><use href="#zmark"/></svg>
     <span class="hero-logo-word">IBA</span>
   </div>
   <h1>Trade smarter.<br /><span>Deliver faster.</span></h1>
-  <p>Ziba connects Kampala's traders and buyers — post products, negotiate deals, track deliveries, and grow your business from your phone.</p>
+  <p>Ziba connects Kampala’s traders and buyers — post products, negotiate deals, track deliveries, and grow your business from your phone.</p>
   <div class="hero-btns">
     <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn-primary">📲 Download for Android</a>
     <a href="#privacy" class="btn-outline">Privacy Policy</a>
