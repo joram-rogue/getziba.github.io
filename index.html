@@ -11,24 +11,21 @@
     a { color: var(--red); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .logo { display: flex; align-items: center; gap: 4px; text-decoration: none; }
-    .logo-z { width: 28px; height: 28px; flex-shrink: 0; }
-    .logo-word { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
-
     nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2rem; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.05em; color: var(--white); }
+    .logo span { color: var(--red); }
     nav a.btn { background: var(--red); color: var(--white); padding: 0.5rem 1.4rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
     nav a.btn:hover { text-decoration: none; opacity: 0.9; }
 
     .hero { text-align: center; padding: 5rem 2rem 4rem; max-width: 700px; margin: 0 auto; }
-    .hero-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem; }
-    .hero-logo-z { width: 72px; height: 72px; flex-shrink: 0; }
-    .hero-logo-word { font-size: 3.6rem; font-weight: 900; letter-spacing: -0.06em; line-height: 1; color: var(--white); }
+    .hero-logo { font-size: 4rem; font-weight: 900; letter-spacing: -0.06em; margin-bottom: 1rem; }
+    .hero-logo span { color: var(--red); }
     .hero h1 { font-size: clamp(2.2rem, 8vw, 3.8rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
-    .hero h1 span { color: var(--red); }
+    .hero h1 em { color: var(--red); font-style: normal; }
     .hero p { color: #aaa; font-size: 1.1rem; margin: 1.2rem 0 2rem; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--red); color: var(--white); padding: 0.8rem 2rem; border-radius: 999px; font-weight: 700; font-size: 1rem; }
-    .btn-outline { border: 2px solid #333; color: var(--white); padding: 0.8rem 2rem; border-radius: 999px; font-weight: 700; font-size: 1rem; }
+    .btn-primary { background: var(--red); color: var(--white); padding: 0.85rem 2rem; border-radius: 999px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-outline { border: 2px solid #333; color: var(--white); padding: 0.85rem 2rem; border-radius: 999px; font-weight: 700; font-size: 1rem; }
     .btn-primary:hover, .btn-outline:hover { text-decoration: none; opacity: 0.85; }
 
     .section { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
@@ -55,46 +52,14 @@
 </head>
 <body>
 
-<!--
-  ZIBA Z MARK — pixel-precise SVG traced from the actual logo PNG.
-  Coordinates derived from per-pixel boundary analysis of the source file.
-
-  4 polygons:
-    1. Top parallelogram  — main bright face, tip at upper-left (4.4,0)
-    2. Top fold shadow    — thin dark triangle below top face
-    3. Bottom parallelogram — main bright face, tip at lower-right (94,100)
-    4. Bottom fold shadow   — quad with inner crease vertex
-
-  The black page background shows through the gap between shapes
-  (Y=26 to Y=34 in the 100-unit viewBox), completing the Z diagonal.
--->
-<svg style="display:none">
-  <symbol id="zmark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <!-- Top main face -->
-    <polygon points="4.4,0 69.8,6 95,26 33.8,26" fill="#e8001d"/>
-    <!-- Top fold shadow -->
-    <polygon points="33.8,26 95,26 98.5,32.5" fill="#6a0010"/>
-    <!-- Bottom main face -->
-    <polygon points="47.6,34 97.6,34 50.6,66 0.6,66" fill="#e8001d"/>
-    <!-- Bottom fold shadow (inner crease vertex at 17.5,68) -->
-    <polygon points="0.6,66 50.6,66 17.5,68 94,100" fill="#6a0010"/>
-  </symbol>
-</svg>
-
 <nav>
-  <a href="/" class="logo">
-    <svg class="logo-z"><use href="#zmark"/></svg>
-    <span class="logo-word">IBA</span>
-  </a>
+  <div class="logo">Ziba<span>.</span></div>
   <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn">📲 Download APK</a>
 </nav>
 
 <section class="hero">
-  <div class="hero-logo">
-    <svg class="hero-logo-z"><use href="#zmark"/></svg>
-    <span class="hero-logo-word">IBA</span>
-  </div>
-  <h1>Trade smarter.<br /><span>Deliver faster.</span></h1>
+  <div class="hero-logo">Ziba<span>.</span></div>
+  <h1>Trade smarter.<br /><em>Deliver faster.</em></h1>
   <p>Ziba connects Kampala’s traders and buyers — post products, negotiate deals, track deliveries, and grow your business from your phone.</p>
   <div class="hero-btns">
     <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn-primary">📲 Download for Android</a>
@@ -116,15 +81,17 @@
 
 <div class="download">
   <h2>Available now on Android</h2>
-  <p>Download the APK directly — no Play Store needed. Enable “Install from unknown sources” and you’re live.</p>
-  <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn-primary">Download Latest APK</a>
+  <p>Download the APK directly — no Play Store needed yet. Enable “Install from unknown sources” and you’re live.</p>
+  <a href="https://github.com/joram-rogue/zibahub/releases/latest" class="btn-primary">📲 Download Latest APK</a>
 </div>
 
 <section class="privacy" id="privacy">
   <h2>Privacy Policy</h2>
   <p><em>Last updated: July 3, 2026</em></p>
+
   <h3>1. Who we are</h3>
   <p>Zibahub (“Ziba”, “we”, “us”) is a social commerce and delivery marketplace connecting traders and buyers in Uganda. Contact: <a href="mailto:getziba6@gmail.com">getziba6@gmail.com</a></p>
+
   <h3>2. What we collect</h3>
   <ul>
     <li>Account info: name, username, email, phone number, mobile money number</li>
@@ -133,6 +100,7 @@
     <li>Device info: device type, push notification token</li>
     <li>Usage data: posts liked, orders placed, searches made</li>
   </ul>
+
   <h3>3. Why we collect it</h3>
   <ul>
     <li>To operate the marketplace and process orders</li>
@@ -141,6 +109,7 @@
     <li>To process payments via Pesapal</li>
     <li>To improve the app experience</li>
   </ul>
+
   <h3>4. Who we share it with</h3>
   <ul>
     <li>Pesapal — to process payments</li>
@@ -148,14 +117,19 @@
     <li>Firebase — push notifications only</li>
   </ul>
   <p>We never sell your data to advertisers. Ever.</p>
+
   <h3>5. Your rights</h3>
   <p>You can request deletion of your account and all data at any time by emailing <a href="mailto:getziba6@gmail.com">getziba6@gmail.com</a>. We process deletion requests within 7 days.</p>
+
   <h3>6. Data security</h3>
   <p>All data is stored on Supabase with row-level security enabled. Passwords are never stored — authentication is handled by Supabase Auth.</p>
+
   <h3>7. Children</h3>
   <p>Ziba is not intended for users under 13.</p>
+
   <h3>8. Changes</h3>
   <p>We’ll notify users of material changes via in-app notification.</p>
+
   <h3>Contact</h3>
   <p><a href="mailto:getziba6@gmail.com">getziba6@gmail.com</a></p>
 </section>
